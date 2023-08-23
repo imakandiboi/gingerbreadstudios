@@ -23,6 +23,24 @@
 
     <div class="mobile-carousel">
       <!-- Mobile carousel goes here -->
+      <div id="mobileCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <!-- Slides -->
+        <div class="carousel-inner">
+          <div v-for="(image, index) in carouselImages" :key="index" class="carousel-item" :class="{ active: index === 0 }">
+            <img :src="image.src" class="d-block w-100" :alt="'Slide ' + (index + 1)" />
+          </div>
+        </div>
+
+        <!-- Custom Previous and Next Buttons -->
+        <a class="carousel-control-prev" href="#desktopCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">back</span>
+        </a>
+        <a class="carousel-control-next" href="#desktopCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">next</span>
+        </a>
+      </div>
     </div>
   </div>
 </template>
